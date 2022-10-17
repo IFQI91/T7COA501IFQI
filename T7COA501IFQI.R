@@ -82,4 +82,5 @@ plot(winePCA$x[,1:2], col = wineClasses)
 
 
 #Espacio de trabajo
+
 save.image("T7COA501IFQI.RData")
