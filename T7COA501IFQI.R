@@ -23,10 +23,38 @@ write.csv(bd1_T7_bd03,"bd1_T7_bd03.csv")
 write.csv(bd2_T7,"bd2_T7.csv")
 write.csv(wine.datos,"wine.datos.csv")
 
+#Lectura de archivos csv
+bd1_T7_bd01 <- read.csv("bd1_T7_bd01.csv")
+bd1_T7_bd02 <- read.csv("bd1_T7_bd02.csv")
+bd1_T7_bd03 <- read.csv("bd1_T7_bd03.csv")
+
+
 #b) Con el archivo 1 calcule la media ponderada de calificaciones por matrícula.
+
+library(dplyr)
+
+
+#Media ponderada
+media_p <- bd1_T7_bd03%>% 
+  group_by(id.est) %>% 
+  summarise(media_ponderada = sum(calificacion * creditos)/sum(creditos))
+
+#Media ponderada2
+media_p2 <- bd1_T7_bd03%>% 
+  group_by(id.est) %>% 
+  mutate(weight = creditos/sum(creditos)) %>% 
+  summarise(media_ponderada = sum(calificacion * weight))
+
+
+
+#install.packages("matrixStats")
+#library("matrixStats")   
+#matrixStats::weightedMean()
 
 #c) Realice un empalme (merge) de los datos por id-est y cree un objeto data.frame con todas las
 #variables, incluyendo la columna de calif_ponderada.
+
+
 
 #d) Exporte el objeto creado a un archivo tipo csv.
 
