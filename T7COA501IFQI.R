@@ -1,6 +1,7 @@
 ##Tarea 7
 ##COA-501 Herramientas de cómputo para investigadores (R y Python)
 ## Alumno: Ivan Fermin Quiroz Ibañez
+#Github: https://github.com/IFQI91/T7COA501IFQI.git
 
 #1. Con los los archivos de datos adjuntos en Excel.
 
